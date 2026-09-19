@@ -29,4 +29,14 @@ The application reads `data/WDICSV.csv` by default. The provided dataset is excl
 
 Open <http://127.0.0.1:8050> in a browser.
 
+## Process Another CSV
+
+Use the standalone clustering script with any CSV containing at least two numeric columns:
+
+```powershell
+.\.venv\Scripts\python.exe .\data\csv_clustering.py path\to\input.csv -k 3 -o clusters.csv
+```
+
+The script selects the five highest-variance numeric features, applies K-means, and saves `PC1`, `PC2`, and `labels` to the output CSV.
+
 If Windows puts the computer to sleep or shuts it down, the local Python server stops or is suspended. After waking the computer, open a new terminal and run the command above again. A local server cannot remain available while the computer is powered off; deploy it to a hosted service for continuous availability.

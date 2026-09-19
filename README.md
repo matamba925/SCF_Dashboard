@@ -39,4 +39,10 @@ Use the standalone clustering script with any CSV containing at least two numeri
 
 The script selects the five highest-variance numeric features, applies K-means, and saves `PC1`, `PC2`, and `labels` to the output CSV.
 
+The same workflow is also available from the project root:
+
+```powershell
+.\.venv\Scripts\python.exe .\app_py2.py path\to\input.csv -k 3 -o clusters.csv
+```
+
 If Windows puts the computer to sleep or shuts it down, the local Python server stops or is suspended. After waking the computer, open a new terminal and run the command above again. A local server cannot remain available while the computer is powered off; deploy it to a hosted service for continuous availability.
